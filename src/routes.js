@@ -19,6 +19,7 @@ routes.post('/grupo_armado', GrupoArmadoController.store)
 
 routes.post('/lider_politico', LiderPoliticoController.store)
 
+routes.get('/conflito', ConflitoController.index)
 routes.post('/conflito', ConflitoController.store)
 
 routes.post('/chefe_militar', ChefeMilitarController.store)
