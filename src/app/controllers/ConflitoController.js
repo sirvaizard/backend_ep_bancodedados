@@ -5,7 +5,7 @@ const typesConflicts = ['economico', 'racial', 'territorial', 'religioso']
 
 class ConflitoController {
   async store(req, res) {
-    const { nome, num_feridos, tipo } = req.body
+    const { nome, num_feridos, num_mortos, tipo } = req.body
 
     if (!typesConflicts.find(type => type === tipo))
       return res.status(400).json({
@@ -22,8 +22,8 @@ class ConflitoController {
       })
 
     await db.query(sql`
-      INSERT INTO conflito (nome, num_feridos)
-      VALUES (${nome}, ${num_feridos})
+      INSERT INTO conflito (nome, num_feridos, num_mortos)
+      VALUES (${nome}, ${num_feridos}, ${num_mortos})
     `)
 
     const response = await db.query(sql`
