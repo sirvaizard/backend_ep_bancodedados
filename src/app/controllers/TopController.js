@@ -28,7 +28,7 @@ class TopController {
 
   async armed_group(req, res) {
     const response = await db.query(sql`
-      SELECT cod_grupo, num_armas.num_armas, nome FROM (
+      SELECT cod_grupo, num_armas_query.num_armas, nome FROM (
         SELECT SUM(num_armas) AS num_armas, cod_grupo
         FROM fornece
         GROUP BY cod_grupo
