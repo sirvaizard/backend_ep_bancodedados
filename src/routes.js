@@ -7,6 +7,7 @@ import ConflitoController from './app/controllers/ConflitoController.js'
 import ChefeMilitarController from './app/controllers/ChefeMilitarController.js'
 import TraficanteGrupoArmadoController from './app/controllers/TraficanteGrupoArmadoController.js'
 import HistogramaController from './app/controllers/HistogramaController.js'
+import TopController from './app/controllers/TopController.js'
 
 const routes = new Router()
 
@@ -19,7 +20,11 @@ routes.post('/grupo_armado', GrupoArmadoController.store)
 
 routes.post('/lider_politico', LiderPoliticoController.store)
 
-routes.get('/conflito', ConflitoController.index)
+routes.get('/top/conflito', TopController.conflicts)
+routes.get('/top/organizacao', TopController.organizations)
+routes.get('/top/grupo_armado', TopController.armed_group)
+routes.get('/top/conflito_religioso', TopController.religious_conflict)
+
 routes.post('/conflito', ConflitoController.store)
 
 routes.post('/chefe_militar', ChefeMilitarController.store)

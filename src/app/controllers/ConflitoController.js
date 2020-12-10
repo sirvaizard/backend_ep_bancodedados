@@ -4,16 +4,6 @@ import db from '../../database/index.js'
 const typesConflicts = ['economico', 'racial', 'territorial', 'religioso']
 
 class ConflitoController {
-  async index(req, res) {
-    const response = await db.query(sql`
-      SELECT * FROM conflito 
-      ORDER BY num_mortos DESC
-      LIMIT 5
-    `)
-
-    return res.status(200).json(response)
-  }
-
   async store(req, res) {
     const { nome, num_feridos, num_mortos, tipo } = req.body
 
