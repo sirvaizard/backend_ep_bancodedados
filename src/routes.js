@@ -5,7 +5,7 @@ import GrupoArmadoController from './app/controllers/GrupoArmadoController.js'
 
 const routes = new Router()
 
-routes.get('/divisao', DivisaoController.index)
+routes.post('/divisao', DivisaoController.store)
 
 routes.post('/grupo_armado', GrupoArmadoController.store)
 
