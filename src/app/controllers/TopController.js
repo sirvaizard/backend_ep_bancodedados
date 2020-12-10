@@ -14,7 +14,7 @@ class TopController {
 
   async organizations(req, res) {
     const response = await db.query(sql`
-      SELECT * FROM (
+      SELECT num_mediacoes_query.mediacoes, cod_organizacao, nome, tipo_org, tipo_ajuda FROM (
         SELECT COUNT(cod_conflito) AS mediacoes, cod_organizacao 
         FROM media
         GROUP BY cod_organizacao
