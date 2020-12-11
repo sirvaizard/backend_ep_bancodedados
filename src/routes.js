@@ -16,6 +16,7 @@ routes.get('/histograma', HistogramaController.index)
 
 routes.post('/divisao', DivisaoController.store)
 
+routes.get('/grupo_armado', GrupoArmadoController.index)
 routes.post('/grupo_armado', GrupoArmadoController.store)
 
 routes.post('/lider_politico', LiderPoliticoController.store)
