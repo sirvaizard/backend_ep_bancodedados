@@ -18,8 +18,8 @@ routes.get('/histograma', HistogramaController.index)
 
 routes.post('/divisao', DivisaoController.store)
 
-routes.get('/grupo_armado_lider', GrupoArmadoLiderPoliticoController.show)
-routes.get('/grupo_armado_divisao', GrupoArmadoDivisaoController.show)
+routes.get('/grupo_armado_lider/:cod_grupo_armado', GrupoArmadoLiderPoliticoController.show)
+routes.get('/grupo_armado_divisao/:cod_grupo_armado', GrupoArmadoDivisaoController.show)
 routes.get('/grupo_armado', GrupoArmadoController.index)
 routes.post('/grupo_armado', GrupoArmadoController.store)
 
