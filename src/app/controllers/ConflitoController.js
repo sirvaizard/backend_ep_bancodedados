@@ -35,7 +35,7 @@ class ConflitoController {
 
     switch (tipo) {
       case 'economico':
-        const { materia_prima } = req.body
+        const materia_prima = req.body.atingido
 
         if (!materia_prima)
           return res.status(400).json({
@@ -49,7 +49,7 @@ class ConflitoController {
         break
 
       case 'racial':
-        const { raca_atingida } = req.body
+        const raca_atingida = req.body.atingido
 
         if (!raca_atingida)
           return res.status(400).json({
@@ -63,7 +63,7 @@ class ConflitoController {
         break
 
       case 'territorial':
-        const { regiao_atingida } = req.body
+        const regiao_atingida = req.body.atingido
 
         if (!regiao_atingida)
           return res.status(400).json({
@@ -77,7 +77,7 @@ class ConflitoController {
         break
 
       case 'religioso':
-        const { religiao_atingida } = req.body
+        const religiao_atingida = req.body.atingido
 
         if (!religiao_atingida)
           return res.status(400).json({
